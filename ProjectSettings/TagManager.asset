@@ -16,7 +16,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Ladder
   - 
   - 
   - 
@@ -40,6 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2159150181
+    locked: 0
+  - name: Midground
+    uniqueID: 696903267
+    locked: 0
+  - name: Foreground
+    uniqueID: 3431328665
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour
 {
     private Animator _animator;
    
-    void Start()
+    void Awake()
     {
         _animator = GetComponent<Animator>();
     }

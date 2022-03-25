@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 1797560697844013866}
   - component: {fileID: 2109768922427435048}
   - component: {fileID: 558406841}
-  - component: {fileID: 3975494181348360358}
   - component: {fileID: 1797560698368853918}
-  - component: {fileID: 9120251898299388944}
   - component: {fileID: 770371809}
   m_Layer: 0
   m_Name: Punk
@@ -104,23 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3975494181348360358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797560697844013864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bec5f253212354695c1095fdcb0955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  _isOnGround: 0
-  _groundDistance: 0.15
 --- !u!114 &1797560698368853918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,23 +116,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 5
   _horizontalDirection: 0
---- !u!114 &9120251898299388944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797560697844013864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2874747670c4442bbbe1dc690a349d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _jumpStarted: 0
   _isJumping: 0
   _canDoubleJump: 0
   _jumpForce: 8
-  _coyoteDuration: 1
+  _coyoteDuration: 3
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _isOnGround: 0
+  _groundDistance: 0.15
+  _climbSpeed: 3
+  _ladderMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _vertical: 0
+  _climbing: 0
+  _checkRadius: 0.3
 --- !u!114 &770371809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,8 +176,8 @@ MonoBehaviour:
     m_ActionName: Player/Movement[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9120251898299388944}
-        m_TargetAssemblyTypeName: PlayerJump, Assembly-CSharp
+      - m_Target: {fileID: 1797560698368853918}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -213,6 +194,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3cf9b550-4e37-44db-b526-2c8896f090fd
     m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1797560698368853918}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Climb
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 52484677-1bfa-4fde-8e57-78ce494b3e65
+    m_ActionName: Player/Climb[/Keyboard/s,/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
