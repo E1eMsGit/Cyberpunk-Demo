@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Move")]
     [SerializeField] private float _movementSpeed = 5;
-    [SerializeField] private float _horizontal;
+    private float _horizontal;
+    private int _direction = 1;
 
     [Header("Ground")]
     [SerializeField] private LayerMask _groundLayer;
@@ -23,16 +24,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ladder")]
     [SerializeField] private float _climbSpeed = 3;
     [SerializeField] private LayerMask _ladderMask;
-    [SerializeField] private float _vertical;
     [SerializeField] private bool _climbing;
     [SerializeField] private float _checkRadius = 0.3f;
+    private float _vertical;
     private Transform _ladder;
     private bool _canMove = true;
 
     private Rigidbody2D _rb;
     private Animator _animator;
     private BoxCollider2D _boxCollider2D;
-    private int _direction = 1;
 
     void Start()
     {
@@ -175,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
 
             float y = _vertical * _climbSpeed;
             _rb.velocity = new Vector2(0, y);
+            _animator.enabled = _vertical == 0 ? false : true;
         }
     }
 
