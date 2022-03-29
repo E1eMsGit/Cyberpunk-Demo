@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2109768922427435048}
   - component: {fileID: 558406841}
   - component: {fileID: 1797560698368853918}
+  - component: {fileID: 7288950875184166521}
   - component: {fileID: 770371809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Punk
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -70,7 +71,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014159679, y: -0.0008280277}
+  m_Offset: {x: -0.009595633, y: -0.043610185}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -81,7 +82,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5327382, y: 1.0549817}
+  m_Size: {x: 0.47988176, y: 0.9694174}
   m_EdgeRadius: 0
 --- !u!95 &558406841
 Animator:
@@ -115,24 +116,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
-  _horizontalDirection: 0
-  _jumpStarted: 0
-  _isJumping: 0
-  _canDoubleJump: 0
-  _jumpForce: 8
-  _coyoteDuration: 3
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
   _isOnGround: 0
   _groundDistance: 0.15
+  _isJumping: 0
+  _canDoubleJump: 0
+  _jumpForce: 8
+  _coyoteDuration: 3
   _climbSpeed: 3
   _ladderMask:
     serializedVersion: 2
     m_Bits: 512
-  _vertical: 0
   _climbing: 0
   _checkRadius: 0.3
+--- !u!114 &7288950875184166521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797560697844013864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36fe54ecd886ca449e2cc9df0a1a9ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 10
+  invencibleTime: 2
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7288950875184166521}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
+        m_MethodName: SetInvicible
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnFinishDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7288950875184166521}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
+        m_MethodName: SetInvicible
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &770371809
 MonoBehaviour:
   m_ObjectHideFlags: 0
