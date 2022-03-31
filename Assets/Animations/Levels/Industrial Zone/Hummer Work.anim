@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hummer
+  m_Name: Hummer Work
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -384,7 +384,7 @@ AnimationClip:
     - time: 2
       value: {fileID: 5393448996881579246, guid: 9939701aa9c19db49a734095729c8f25, type: 3}
     attribute: m_Sprite
-    path: Hammer_0
+    path: Sprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 12
@@ -409,7 +409,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 656679968
+      path: 850496168
       attribute: 0
       script: {fileID: 0}
       typeID: 212
